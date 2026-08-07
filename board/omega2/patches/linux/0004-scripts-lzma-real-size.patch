@@ -1,0 +1,11 @@
+--- a/scripts/Makefile.lib
++++ b/scripts/Makefile.lib
+@@ -460,7 +460,7 @@
+ # ---------------------------------------------------------------------------
+ 
+ quiet_cmd_lzma = LZMA    $@
+-      cmd_lzma = cat $(real-prereqs) | $(LZMA) e -d20 -lc1 -lp2 -pb2 -eos -si -so > $@
++      cmd_lzma = $(LZMA) e -d20 -lc1 -lp2 -pb2 $(real-prereqs) $@
+ 
+ quiet_cmd_lzma_with_size = LZMA    $@
+       cmd_lzma_with_size = { cat $(real-prereqs) | $(LZMA) e -d20 -lc1 -lp2 -pb2 -eos -si -so; $(size_append); } > $@

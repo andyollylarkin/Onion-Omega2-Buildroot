@@ -1,0 +1,2 @@
+add-auto-load-safe-path /builds/buildroot.org/toolchains-builder/build/mips32el--musl--stable-2025.08-1/mipsel-buildroot-linux-musl/sysroot
+set sysroot /builds/buildroot.org/toolchains-builder/build/mips32el--musl--stable-2025.08-1/mipsel-buildroot-linux-musl/sysroot
