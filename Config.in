@@ -131,6 +131,7 @@ config BR2_NEEDS_HOST_GCC_PLUGIN_SUPPORT
 source "arch/Config.in"
 
 source "toolchain/Config.in"
+source "board/omega2/Config.in"
 
 menu "Build options"
 

@@ -110,6 +110,7 @@ source "toolchain/toolchain-external/toolchain-external-arm-arm/Config.in.option
 
 # Bootlin toolchains
 source "toolchain/toolchain-external/toolchain-external-bootlin/Config.in.options"
+source "board/omega2/Config.in"
 
 # Custom toolchains
 source "toolchain/toolchain-external/toolchain-external-custom/Config.in.options"

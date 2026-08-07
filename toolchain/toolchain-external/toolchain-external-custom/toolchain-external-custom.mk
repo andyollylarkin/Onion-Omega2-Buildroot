@@ -17,4 +17,8 @@ endif
 endif
 endif
 
+ifeq ($(BR2_OMEGA2_BUILD_CTNG_TOOLCHAIN),y)
+TOOLCHAIN_EXTERNAL_CUSTOM_DEPENDENCIES += host-omega2-ctng
+endif
+
 $(eval $(toolchain-external-package))

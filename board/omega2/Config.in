@@ -1,0 +1,10 @@
+menu "Omega2 build toolchain"
+	config BR2_OMEGA2_BUILD_CTNG_TOOLCHAIN
+	      bool "Build toolchain from source via crosstool-NG"
+	      help
+		Build Omega2 CTNG toolchain from source (use gcc 11.20 mipsel, soft-float, musl)
+	config BR2_OMEGA2_CTNG_URL
+		depends on BR2_OMEGA2_BUILD_CTNG_TOOLCHAIN
+		string "crosstool-NG download URL"
+		default "https://github.com/crosstool-ng/crosstool-ng/releases/download/crosstool-ng-1.25.0/crosstool-ng-1.25.0.tar.xz"
+endmenu
