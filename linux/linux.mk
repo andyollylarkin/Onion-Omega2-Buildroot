@@ -336,6 +336,16 @@ define LINUX_ADD_DTC_LOCATIONS
 endef
 LINUX_POST_PATCH_HOOKS += LINUX_ADD_DTC_LOCATIONS
 
+# Omega2 onboard MT7628 wifi firmware, embedded via CONFIG_EXTRA_FIRMWARE
+# (request_firmware() for the wmac runs before rootfs is mounted, since
+# this kernel has no loadable module support, so the blob must be built
+# into vmlinux rather than read from /lib/firmware at runtime).
+define LINUX_COPY_OMEGA2_FIRMWARE
+	mkdir -p $(@D)/firmware
+	cp -a $(TOPDIR)/board/omega2/firmware/*.bin $(@D)/firmware/
+endef
+LINUX_POST_PATCH_HOOKS += LINUX_COPY_OMEGA2_FIRMWARE
+
 # Older linux kernels use deprecated perl constructs in timeconst.pl
 # that were removed for perl 5.22+ so it breaks on newer distributions
 # Try a dry-run patch to see if this applies, if it does go ahead
